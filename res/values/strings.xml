@@ -1,4 +1,60 @@
 <resources>
     <string name="app_name">WWa</string>
     <string name="start_game">開始</string>
+    <string name="license" translatable="false">Werewolf alpha - A werewolf app for android\n\n
+                              Copyright © 2018 QCFium\n\n
+                              This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.\n\n
+                              This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\n
+                              You should have received a copy of the GNU General Public License along with this program. If not, see &lt;http://www.gnu.org/licenses/>.</string>
+    <string name="err_no_more_player">You can\'t add players anymore</string>
+    <string name="err_illegal_name">Illegal name</string>
+    <string name="err_num_no_match">The # not matched</string>
+
+    <string name="dialog_new_player">追加するプレイヤーの名前を入力してください</string>
+    <string name="judged">%1$s is judged</string>
+    <string name="noon_count">%2$s日目の昼</string>
+    <string name="night_count">%2$s日目の昼</string>
+
+    <string name="died_follow_fox">%1$sは狐の後を追って自ら死を選びました。\n</string>
+    <string name="died_killed">%1$sが無惨な姿で見つかりました。\n</string>
+    <string name="died_none">昨夜殺された人はいませんでした\n</string>
+    <string name="result">%1$sサイドの勝利です。\n\n</string>
+
+    <string name="survived">生存者 :\n</string>
+    <string name="position_result">役職 :\n</string>
+
+    <string name="turn_msg">%1$sさんの番です</string>
+    <string name="position_msg">あなたは%1$sです</string>
+    <string name="judge_msg">%1$sさんの投票です</string>
+    <string name="divine_result">%1$sは%2$s</string>
+    <string name="reibai_result">今日処刑した%1$sは%2$s</string>
+
+    <string name="divined_zinro">人狼でした。</string>
+    <string name="divined_not_zinro">人狼ではありませんでした。</string>
+    <string name="divined_fox">狐でした。</string>
+
+    <string name="zinro">人狼</string>
+    <string name="uranai">占い師</string>
+    <string name="kishi">騎士</string>
+    <string name="reibai">霊媒師</string>
+    <string name="person">村人</string>
+    <string name="fox">狐</string>
+    <string name="haitoku">背徳者</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">キャンセル</string>
+    <string name="button_start">開始</string>
+    <string name="button_finish">終了</string>
+    <string name="button_add">+</string>
+
+    <string name="finish_confirm">本当に終了しますか?</string>
+    <string name="vote_confirm">本当に%1$sさんに投票しますか?</string>
+
+    <string name="button_license">ライセンス</string>
+
+    <string name="players_msg">プレイヤー</string>
+
+    <string name="settings_forbid_self_voting">自分への投票を無効</string>
+
+    <string name="noon_timer_format">%1$d:%2$d</string>
 </resources>

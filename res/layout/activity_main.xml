@@ -2,13 +2,27 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/Bstart_game"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="@string/start_game"
-        />
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/Bshow_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_license"
+        android:textSize="30sp" />
+
+    <CheckBox
+        android:id="@+id/CBforbid_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_forbid_self_voting"/>
 
 </LinearLayout>

@@ -1,28 +1,33 @@
 package matsuo.rin.zinro.alpha;
 
-import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FirstNightActivity extends AppCompatActivity {
+import static matsuo.rin.zinro.alpha.GameState.*;
+
+public class FirstNightActivity extends AppCompatActivity{
     /*
-        Extras :
-        String cur_player_name // user's name
-        int position_id // the role's id(role is already decided)
-    */
+        Warning
+        This Activity is just for the random animation
+        The position is already decided in GameActivity
+     */
 
     boolean isRandomizing = true;
-    int position_id_r = 0; // for randomization(dummy)
-    int position_id = 0; // from GameActivity(actual)
-    private String user_name;
+    int positionIdDummy = 0; // for randomization(dummy)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_night);
+
+        if (curPlayerId < 0) Error.error(this, "FirstNightActivity#onCreate : curPlayerId == -1");
+
+        // set the user name
+        ((TextView)findViewById(R.id.TVplayer_name)).setText(playerList.get(curPlayerId).name);
 
         final TextView tv_position = findViewById(R.id.TVposition);
         final Handler handler = new Handler();
@@ -30,23 +35,28 @@ public class FirstNightActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (!isRandomizing) {
+                    String RealPositionName = playerList.get(curPlayerId).position.getName(FirstNightActivity.this);
                     // the TextView is tapped -> stop randomizing and set the position
-                    user_name = getIntent().getStringExtra("cur_player_name");
-                    position_id = getIntent().getIntExtra("position_id", -1);
-                    tv_position.setText(WW_Positions.WW_Positions[position_id]);
-                    finish();
+                    tv_position.setText(RealPositionName);
+
+                    findViewById(R.id.Bfinish).setVisibility(View.VISIBLE); // enable the finish button
+                } else {
+                    // update position to the next position(this looks random)
+                    tv_position.setText(Position.getNameById(positionIdDummy, FirstNightActivity.this));
+                    if (++positionIdDummy >= Positions.num) positionIdDummy = 0;
+
+                    handler.postDelayed(this, 100);
                 }
-
-                // update position to the next position(this looked randomly)
-                tv_position.setText(WW_Positions.WW_Positions[position_id_r]);
-                if (++position_id_r >= WW_Positions.positions_count) position_id_r = 0;
-
-                handler.postDelayed(this, 100);
             }
         }, 0);
     }
 
-    public void onClick_start_rand (View v) {
+    public void onClick_stop_rand (View v) {
         isRandomizing = false;
+    }
+
+    public void onClick_finish (View v) {
+        setResult(RESULT_OK);
+        finish();
     }
 }

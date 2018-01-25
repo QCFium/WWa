@@ -8,24 +8,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Users"
+        android:text="@string/players_msg"
         android:textSize="40sp"
         android:gravity="center"
         />
 
-    <!-- Users -->
+    <!-- players -->
     <ListView
-        android:id="@+id/LVusers"
+        android:id="@+id/LVplayers"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"/>
 
-    <!-- add user -->
+    <!-- add player -->
     <Button
-        android:id="@+id/Badd_user"
+        android:id="@+id/Badd_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+"
+        android:text="@string/button_add"
         android:textSize="35sp"/>
 
     <LinearLayout
@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="キャンセル"
+            android:text="@string/button_cancel"
             />
 
         <Button
@@ -46,7 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="開始"
+            android:text="@string/button_start"
             />
 
     </LinearLayout>

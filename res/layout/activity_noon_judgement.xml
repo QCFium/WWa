@@ -8,13 +8,12 @@
         android:id="@+id/TVplayer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"/>
+        android:textAlignment="center"
+        android:textSize="35sp" />
 
-    <Button
+    <ListView
+        android:id="@+id/LVplayers"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClick_enter"
-        android:text="Enter"
-        android:textSize="25sp"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

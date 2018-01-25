@@ -5,28 +5,27 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/TVdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp" />
+
+    <TextView
         android:id="@+id/TVplayer_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="40sp"/>
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/TVposition"
+        android:id="@+id/TVplayer_position"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:focusable="true"
-        android:clickable="true"
-        android:onClick="onClick_stop_rand"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/Bfinish"
+    <ListView
+        android:id="@+id/LVplayers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="finish"
-        android:onClick="onClick_finish"/>
+        />
 
 </LinearLayout>

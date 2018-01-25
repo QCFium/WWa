@@ -17,8 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity" />
-        <activity android:name=".UserRegisterActivity" />
-        <activity android:name=".FirstNightActivity"></activity>
+        <activity android:name=".PlayerRegisterActivity" />
+        <activity android:name=".FirstNightActivity" />
+        <activity android:name=".PositionsSettingsActivity" />
+        <activity android:name=".NoonActivity" />
+        <activity android:name=".NoonJudgementActivity" />
+        <activity android:name=".NightActivity" />
+        <activity android:name=".NightKillResultActivity" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>

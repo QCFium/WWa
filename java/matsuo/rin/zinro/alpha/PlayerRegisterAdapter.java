@@ -10,24 +10,27 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class UserRegisterAdapter extends BaseAdapter {
+class PlayerRegisterAdapter extends BaseAdapter {
+    /*
+        This references ArrayList<String> Settings.playerList
+     */
+
     private Context context;
     private LayoutInflater layoutInflater = null;
-    public ArrayList<String> userList = new ArrayList<>(); // accessed to update player lists
 
-    public UserRegisterAdapter(Context context) {
+    public PlayerRegisterAdapter(Context context) {
         this.context = context;
         this.layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return userList.size();
+        return GameState.playerList.size();
     }
 
     @Override
     public String getItem(int position) {
-        return userList.get(position);
+        return GameState.playerList.get(position).name;
     }
 
     @Override
@@ -38,18 +41,18 @@ public class UserRegisterAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.listview_user_register,parent,false);
+            convertView = layoutInflater.inflate(R.layout.listview_player_register,parent,false);
         }
 
-        final TextView tv_user = (TextView)convertView.findViewById(R.id.ETuser);
-        tv_user.setText(userList.get(position));
+        final TextView tv_player = convertView.findViewById(R.id.ETplayer);
+        tv_player.setText(GameState.playerList.get(position).name);
 
-        final Button b_del_user = (Button) convertView.findViewById(R.id.Bdel_user);
-        b_del_user.setOnClickListener(new View.OnClickListener() {
+        final Button b_del_player = convertView.findViewById(R.id.Bdel_player);
+        b_del_player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // remove the user
-                userList.remove(position);
+                // remove the player
+                GameState.playerList.remove(position);
                 notifyDataSetChanged();
             }
         });

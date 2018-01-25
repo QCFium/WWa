@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/TVplayer_name"
+        android:id="@+id/TVdesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:textSize="40sp"/>
 
     <TextView
-        android:id="@+id/TVposition"
+        android:id="@+id/TVtimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:focusable="true"
-        android:clickable="true"
-        android:onClick="onClick_stop_rand"
-        android:textSize="30sp"/>
+        android:textSize="35sp"/>
+
+    <TextView
+        android:id="@+id/TVdeath_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
     <Button
         android:id="@+id/Bfinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="finish"
-        android:onClick="onClick_finish"/>
+        android:text="@string/button_finish"
+        android:textSize="40sp"/>
+
 
 </LinearLayout>
